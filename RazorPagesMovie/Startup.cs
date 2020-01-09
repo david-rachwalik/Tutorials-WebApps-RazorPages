@@ -27,8 +27,10 @@ namespace RazorPagesMovie
         {
             services.AddRazorPages();
 
+            //services.AddDbContext<RazorPagesMovieContext>(options =>
+            //    options.UseSqlServer(Configuration.GetConnectionString("RazorPagesMovieContext")));
             services.AddDbContext<RazorPagesMovieContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("RazorPagesMovieContext")));
+                options.UseSqlite(Configuration.GetConnectionString("MovieContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
